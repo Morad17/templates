@@ -1,11 +1,24 @@
 
-/*------Nav----*/
-
+/*------Nav-1---*/
+body{
+    margin:0;
+    padding:0;
+}
+.nav-1{
+    background-color: black;
+    color: white;
+    padding: 5px 0;
+}
 .nav-1 ul{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 0;
+    margin:0;
+    font-size: 20px;
+}
+.nav-1 ul li{
+    padding:0 20px;
 }
 nav ul li{
     list-style: none;
@@ -13,10 +26,42 @@ nav ul li{
 .socials p{
     display: inline;
 }
-
-.nav-2 ul{
+.nav-1 i{
+    padding:0 7px;
+}
+.fa-instagram{
+    color:#833AB4;
+}
+.fa-facebook{
+    color:#3b5998;
+}
+.fa-twitter{
+    color:#00acee;
+}
+/*------Nav-2----*/
+.nav-2 {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    padding: 0;
+    justify-content: space-around;
+    margin-right: 200px;
+}
+.nav-2 ul {
+    display: flex;
+    flex-direction: row;
+}
+.nav-2 .logo h1{
+    margin:0;
+}
+.logo-list{
+    text-align: left;
+}
+.nav-2 nav{
+    margin-left: 300px;
+}
+
+.nav-links{
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px;
+    color: black;
 }
