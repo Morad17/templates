@@ -1,9 +1,25 @@
-
-/*------Nav-1---*/
 body{
     margin:0;
     padding:0;
+    background-image: url("images/hero-image.jpg");
+    background-color: white;
+    width: 100%;
+    z-index: -99;
 }
+.justify-content-center{
+    justify-content: center;
+}
+.hero-wrapper{
+    background-color: rgba(0, 0, 0, 0.21);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: -9;   
+}
+/*------Nav-1---*/
+
 .nav-1{
     background-color: black;
     color: white;
@@ -40,6 +56,7 @@ nav ul li{
 }
 /*------Nav-2----*/
 .nav-2 {
+    margin-top:15px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -51,6 +68,7 @@ nav ul li{
 }
 .nav-2 .logo h1{
     margin:0;
+    color: white;
 }
 .logo-list{
     text-align: left;
@@ -63,5 +81,6 @@ nav ul li{
     text-decoration: none;
     font-size: 20px;
     padding: 20px;
-    color: black;
+    color: white;
 }
+/*----Hero Text----*/
