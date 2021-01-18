@@ -1,12 +1,14 @@
 body{
     margin:0;
     padding:0;
-    background-image: url("images/hero-image.jpg");
+    background-image: url("images/hero-image1.jpg");
+    background-repeat: no-repeat;
     background-color: white;
     width: 100%;
+    height:100%;
     z-index: -99;
     font-family: 'PT Sans Caption', sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 .justify-content-center{
     justify-content: center;
@@ -15,7 +17,7 @@ body{
     text-align: center;
 }
 .hero-wrapper{
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: rgba(0, 0, 0, 0.45);
     position: absolute;
     height: 100%;
     width: 100%;
@@ -122,16 +124,16 @@ nav ul li{
     width: 100px;
     border-color: #ffd628;
 }
-.hero-row{
+.hero-section{
     margin-top:200px;
     animation: heroRow 3s;
 }
-.hero-row h3{
+.hero-section h3{
     font-size: 70px;
     color: white;
     font-family: 'Parisienne', cursive;
 }
-.hero-row h2{
+.hero-section h2{
     font-size:50px;
     color: white;
     font-weight: 100;
@@ -143,11 +145,44 @@ nav ul li{
 .category-box{
     padding-top: 25px;
 }
-.hero-row .container > h3{
+.hero-section .container > h3{
     border: 5px solid #ffd628;
     margin: auto;
     width: 20%;
 }
+/*-----Specials----*/
+.specials-heading{
+    margin-top: 170px;
+    margin-bottom: 60px;
+    font-family: 'parisienne', cursive;
+    font-size: 35px;
+}
+.specials-section{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.card{
+    width:16%;
+    background-color: white;
+}
+.card-image img{
+   max-width: 100%;
+    max-height: 100%; 
+}
+.card-row p{
+    margin: 0;
+    font-size: 14px;
+    padding: 10px 20px;
+}
+.card-row h4{
+    margin: 10px;
+}
+
+
+
+
+
 /*----Hover Effects----*/
 .nav-links:hover{
     border-bottom: 4px solid white;
