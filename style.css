@@ -1,14 +1,11 @@
+html{
+    height: 100%;
+}
 body{
     margin:0;
     padding:0;
-    background-image: url("images/hero-image1.jpg");
-    background-repeat: no-repeat;
-    background-color: white;
-    width: 100%;
-    height:100%;
-    z-index: -99;
     font-family: 'PT Sans Caption', sans-serif;
-    overflow-x: hidden;
+    background-color: whitesmoke;
 }
 .justify-content-center{
     justify-content: center;
@@ -17,13 +14,16 @@ body{
     text-align: center;
 }
 .hero-wrapper{
-    background-color: rgba(0, 0, 0, 0.45);
-    position: absolute;
-    height: 100%;
-    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.45)), url("images/hero-image.jpg") no-repeat center center;
+    background-color: whitesmoke;
+    z-index: -99;
+    height: 100vh;
+    width: 100vw;
     top: 0;
     right: 0;
-    z-index: -9;   
+    z-index: -9;
+    position: absolute;
+    border-bottom: 2.5px solid;
 }
 .btn{
     padding: 6px 20px;
@@ -127,6 +127,7 @@ nav ul li{
 .hero-section{
     margin-top:200px;
     animation: heroRow 3s;
+    margin-bottom: 150px;
 }
 .hero-section h3{
     font-size: 70px;
@@ -150,21 +151,54 @@ nav ul li{
     margin: auto;
     width: 20%;
 }
-/*-----Specials----*/
-.specials-heading{
-    margin-top: 170px;
-    margin-bottom: 60px;
+/*-----About----*/
+.about-heading{
     font-family: 'parisienne', cursive;
     font-size: 35px;
+    background-color: #F5F5F5;
+    margin:0;
+    padding-bottom: 20px;
+}
+.about-section{
+    background-color: #F5F5F5;
+    padding: 0 20%;
+}
+.about-section img{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 15vw;
+    text-align: center;
+    border-radius: 15%; 
+}
+.about-section p{
+    padding-bottom: 60px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700; 
+}
+/*-----Specials----*/
+.specials-heading{
+    margin-top: 60px;
+    margin-bottom: 0;
+    padding-bottom: 60px;
+    font-family: 'parisienne', cursive;
+    font-size: 35px;
+    padding-top: 30px;
+    background-color: white;
 }
 .specials-section{
     display:flex;
     flex-direction: row;
     justify-content: space-evenly;
+    background-color: white;
 }
 .card{
     width:16%;
     background-color: white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin: 0 -10%;
 }
 .card-image img{
    max-width: 100%;
@@ -178,9 +212,71 @@ nav ul li{
 .card-row h4{
     margin: 10px;
 }
+/*----Customer Reviews----*/
 
+/*-------Carousel------*/
 
+.carousel{
+    position: relative;
+    height: 400px;
+    margin: 0 auto;
+}
+.carousel_track-container{
+    background-color: yellow;
+    padding: 10px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.carousel_track{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    height: 100%;
+    transition: transform 250ms ease-in;
+}
+.carousel_slide{
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   width: 100%; 
+}
+.carousel_nav{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+.carousel_indicator{
+    border: 0;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: rgba(0,0,0,0.3);
+    margin: 0 10px;
+}
+.carousel_indicator.active-slide{
+    background: rgba(0, 0, 0, 0.75);
+}
+/* https://codepen.io/carstenmeyer/pen/rraoAp */
+.pic {
+  margin: 50px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 0; 
+  height: 0; 
+}
 
+.arrow-left {
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-right: 30px solid #737373;
+}
+.arrow-right {
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 30px solid #737373;
+}
 
 
 /*----Hover Effects----*/
@@ -192,6 +288,9 @@ nav ul li{
 .btn:hover{
     background-color: #ffe67d;
     cursor: pointer;
+}
+.card:hover {
+  box-shadow:0 8px 20px 0 rgb(0 0 0 / 63%);
 }
 /*------Animation-----*/
 @keyframes heroRow {
@@ -215,3 +314,12 @@ nav ul li{
         transform: translateX(0);
     }
 }
+
+/*-----Media Queries----*/
+
+/*----Fix full width hero image on 1080px screens---*/
+@media screen and (min-height: 890px){
+      .hero-section{
+        margin-bottom: 245px;
+      }  
+    }
