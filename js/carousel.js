@@ -1,40 +1,47 @@
-const track = document.querySelector('.carousel_track');
-const slides = Array.from(track.children);
-const dotsNav = document.querySelector('.carousel_nav');
-const dots = Array.from(dotsNav.children);
+const slideContainer = document.querySelector('.carousel');
+const slide = document.querySelector('.slides')
+const nextBtn = document.getElementById('next-btn');
+const prevBtn = document.getElementById('prev-btn');
+const interval = 1000;
 
-const slideWidth = slides[0].getBoundingClientRect().width;
-// Arrange Slides//
+let slides = document.querySelectorAll('.slide')
+let index = 1;
+// // Arrange Slides//
 
-const setSlidePosition = (slide, index) => {
-    slide.style.left = slideWidth * index + 'px'
+const firstClone = slides[0].cloneNode(true);
+const lastClone = slides[slides.length - 1].cloneNode(true)
+
+firstClone.id = 'first-clone';
+lastClone.id = 'last-clone';
+
+slide.append(firstClone);
+slide.prepend(lastClone)
+
+const slideWidth = slides[index].clientWidth;
+
+slide.style.transform = `translateX(${-slideWidth * index}px)`;
+
+console.log(slides)
+const startSlide = () => {
+    setInterval(() =>{
+    index++;
+    slide.style.transform = `translateX(${-slideWidth * index}px)`;
+    slide.style.transition = '.7s';
+    }, interval);
 };
-slides.forEach(setSlidePosition);
+startSlide();
+slide.addEventListener('transitionend', () => {
+    firstClone.id = 'first-clone';
+    lastClone.id = 'last-clone';
+    slides = document.querySelectorAll('.slide');
+    if(slides[index].id === firstClone.id){
+        slides.style.transition = 'none';
+        index = 1;
+        slide.style.transform = `translateX(${-slideWidth * index}px)`;
+    }
+});
 
-const moveToSlide = (track, currentSlide, targetSlide) => {
-    track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
-    currentSlide.classList.remove('active-slide');
-    nextSlide.classList.add('active-slide')
-}
 
-//Update bottom Dots
-const updateDots = (currentDot, targetDot) => {
-    currentDot.classList.remove('current-slide');
-    targetDot.classList.add('current-slide');
-}
 
-dotsNav.addEventListener('click', e => {
-    //Which indicator clicked on
-    const targetDot = e.target.closest('button');
 
-    if (!targetDot) return;
-    
-    const currentSlide = track.querySelector('.current-slide');
-    const currentDot = dotsNav.querySelector('.current-slide');
-    const targetIndex = dots.findIndex(dot => dot === targetDot)
-    const targetSlide = slides[targetIndex];
 
-    moveToSlide(track, currentSlide, targetSlide);
-    updateDots(currentDot, targetDot);
-    
-})

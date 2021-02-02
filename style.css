@@ -214,16 +214,41 @@ nav ul li{
 }
 /*----Customer Reviews----*/
 .reviews-section{
-    padding-top: 100px;
     background: linear-gradient(rgba(0, 0, 0, 0.25),rgba(0, 0, 0, 0.25)), url("images/reviews-section.jpg") center center no-repeat fixed;
     background-size: cover;
     max-height: 600px;
 
 }
-.carousel_slide p{
+.slide p{
+    line-height: 150%;
     color: white;
     font-size: 30px;
     font-style: italic;
+    text-align: center;
+}
+.slide img{
+    margin: auto;
+    display: block;
+    width: 100px;
+    background-color: black;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid black;
+}
+.reviews-section h2{
+    margin: 0;
+    padding: 50px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+    font-family: 'Parisienne', cursive;
+}
+.reviews-section .rating{
+    text-align: center;
+    padding: 10px;
+}
+.reviews-section .rating i{
+    color: #ffd628;
 }
 /*-------Carousel------*/
 
@@ -232,10 +257,20 @@ nav ul li{
     height: 400px;
     margin: 0 auto;
 }
+.slides{
+    display:flex;
+    height: 100%;
+}
+.slide{
+    min-width: 100%;
+}
+
+
+
 .carousel_track-container{
     background-color: transparent;
-    padding: 10px;
-    height: 100%;
+    padding: 0px;
+    height: 90%;
     position: relative;
     overflow: hidden;
 }
@@ -273,9 +308,9 @@ nav ul li{
     margin: 0 10px;
     cursor: pointer;
 }
-.carousel_indicator.active-slide{
+.active-slide{
     background: rgba(0, 0, 0, 0.75);
-}
+} */
 /* https://codepen.io/carstenmeyer/pen/rraoAp */
 .pic {
   margin: 50px;
@@ -284,22 +319,105 @@ nav ul li{
   width: 0; 
   height: 0; 
 }
+.slide-controls{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#prev-btn, #next-btn{
+    cursor: pointer;
+    background:transparent;
+    font-size: 30px;
+    border: none;
+    padding: 10px;
+    color: white;
+    opacity: 50%;
+}
+#prev-btn:focus, #next-btn:focus{
+    outline: none;
+}
+/*----Contact Info---*/
+.booking-info{
+    padding: 35px 0;
+    background-color: #debb25;
+}
+.booking-info .row{
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 0 18%;
+}
+.booking-info .container{
+    display: inline-flex;
+}
+.icon{
+    font-size: 25px;
+    padding: 20px; 
+}
+.booking-info i{
+    text-align: center;
+    line-height: 60px;
+    border-radius: 50%;
+    color: #debb25;
+    border: 2px solid #f5f5f5;
+    width: 60px;
+    height: 60px;
+    background: #f5f5f5;
+}
+.booking-info h3{
+    color: white;
+} 
+.booking-info p{
+    color: white;
+}
 
-.arrow-left {
-  border-top: 30px solid transparent;
-  border-bottom: 30px solid transparent;
-  border-right: 30px solid #737373;
+/*-----Footer-----*/
+footer{
+    background-color: #0b0e10;
+    padding:60px 0;
 }
-.arrow-right {
-  border-top: 30px solid transparent;
-  border-bottom: 30px solid transparent;
-  border-left: 30px solid #737373;
+footer a, footer p, footer h4{
+    color: white;
 }
-.is-hidden{
-    display:none;
+footer a, footer p{
+    font-size: 0.95rem !important;
 }
-
+footer .row{
+    display:flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 0 18%;
+}
+footer h3{
+    font-size: 70px;
+    color: white;
+    font-family: 'Parisienne', cursive;
+}
+.footer-links li{
+    list-style: none;
+    padding-top:10px;
+}
+footer hr{
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    width: 70%;
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.footer-social a{
+    padding: 0 10px;
+}
+.footer-social i{
+    color:white;
+}
 /*----Hover Effects----*/
+
 .nav-links:hover{
     border-bottom: 4px solid white;
     color:#ffd628;
