@@ -56,7 +56,7 @@
         <div class="container">
             <h3>Al Dente's</h3>
             <h2>"Fresh, Tasty Food, With A Kick"</h2>
-            <button class="btn">Book Now</button>
+            <button class="book-btn">Book Now</button>
             <div class="category-box">
                 <hr><h3>Indian Cuisine</h3><hr>
             </div>
@@ -112,9 +112,8 @@
 <!---Customer Reviews-->
     <section class="reviews-section">
         <h2>Customer Reviews</h2>
-        <div class="carousel">
-            <div class="slides">
-                <div class="slide">
+            <div class="carousel">
+                <div class="slide active">
                     <img src="images/faces/face-1.jpg" alt="Person">
                     <div class="rating">
                         <i class="fas fa-star"></i>
@@ -165,16 +164,15 @@
                     </div>
                     <p>"Came for lunch with my sister. We loved our Thai-style mains which were amazing with lots of flavour."</p>
                 </div>
-            </div>
-                <div class="slide-controls">
-                    <button id="prev-btn">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button id="next-btn">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
+            
+                <div class="navigation">
+                    <div class="btn active"></div>
+                    <div class="btn"></div>
+                    <div class="btn"></div>
+                    <div class="btn"></div>
+                    <div class="btn"></div>
                 </div>
-        </div>
+            </div>
     </section>
 <!----Booking Info---->
     <section class="booking-info">
@@ -254,7 +252,7 @@
     </div>
 </footer>
 <!---Script-->
-<script src="js/carousel.js"></script>
+<script src="js/carousel.js" type="text/javascript"></script>
 <script src="https://kit.fontawesome.com/dc80c66174.js" crossorigin="anonymous"></script>
 </body>
 
